@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+
+<driverType>chrome</driverType>
+
+<url>https://buyme.co.il/</url>
+
+<firstName>me</firstName>
+
+<email>me@me.com</email>
+
+<password>123456</password>
+
+<receiverOfGift>friend</receiverOfGift>
+
+<bless>Best wishes!</bless>
+
+<friendEmail>friend@friend.com</friendEmail>
+
+</config>
