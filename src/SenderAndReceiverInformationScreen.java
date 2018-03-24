@@ -24,14 +24,14 @@ class SenderAndReceiverInformationScreen {
     // The method inputs amount to gift and saves a screen shot.
     private void inputAmount (WebDriver driver, ExtentTest test) throws IOException {
         ConstantsClass.WAIT.until(ExpectedConditions.visibilityOfElementLocated(ConstantsClass.AMOUNT_TO_GIVE_FIELD));
-        test.log(Status.INFO, "Amount to gift screen.", MediaEntityBuilder.createScreenCaptureFromPath(SupportingMethods.takeScreenShot(ConstantsClass.PATHWAY_TO_AUXILIARY_FILES + "/AmountToGiftScreen", driver)).build());
+        test.log(Status.INFO, "Amount to gift screen.", MediaEntityBuilder.createScreenCaptureFromPath(SupportingMethods.takeScreenShot("."+ConstantsClass.PATHWAY_TO_AUXILIARY_FILES + "/AmountToGiftScreen", driver)).build());
         driver.findElement(ConstantsClass.AMOUNT_TO_GIVE_FIELD).sendKeys("200" + Keys.ENTER);
     }
 
     // The method uploads information for sender and receiver of gift and saves a screen shot.
     private void uploadInformation(WebDriver driver, ExtentTest test) throws IOException {
         ConstantsClass.WAIT.until(ExpectedConditions.visibilityOfElementLocated(ConstantsClass.FOR_FRIEND_BUTTON));
-        test.log(Status.INFO, "Sender and receiver information screen.", MediaEntityBuilder.createScreenCaptureFromPath(SupportingMethods.takeScreenShot(ConstantsClass.PATHWAY_TO_AUXILIARY_FILES + "/SenderReceiverInformationScreen", driver)).build());
+        test.log(Status.INFO, "Sender and receiver information screen.", MediaEntityBuilder.createScreenCaptureFromPath(SupportingMethods.takeScreenShot("."+ConstantsClass.PATHWAY_TO_AUXILIARY_FILES + "/SenderReceiverInformationScreen", driver)).build());
         driver.findElement(ConstantsClass.FOR_FRIEND_BUTTON).click();
         boolean detailUpload = true;
         try {
@@ -53,7 +53,7 @@ class SenderAndReceiverInformationScreen {
     private void uploadPicture (WebDriver driver, ExtentTest test){
         boolean pictureUpload = false;
         try {
-            driver.findElement(ConstantsClass.PHOTO_UPLOAD_FIELD).sendKeys(ConstantsClass.PATHWAY_TO_AUXILIARY_FILES + "/Best Wishes Photo.png");
+            driver.findElement(ConstantsClass.PHOTO_UPLOAD_FIELD).sendKeys(System.getProperty("user.dir")+ConstantsClass.PATHWAY_TO_AUXILIARY_FILES + "/Best Wishes Photo.jpg");
             pictureUpload = true;
         } finally {
             if (pictureUpload){

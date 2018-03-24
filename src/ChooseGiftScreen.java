@@ -29,7 +29,7 @@ class ChooseGiftScreen {
     // The method chooses a gift on the screen and saves a screen shot.
     private void chooseGift (WebDriver driver, ExtentTest test){
         try {
-            test.log(Status.INFO, "Choose Gift screen." ,MediaEntityBuilder.createScreenCaptureFromPath(SupportingMethods.takeScreenShot(ConstantsClass.PATHWAY_TO_AUXILIARY_FILES +"/ChooseGiftScreen", driver)).build());
+            test.log(Status.INFO, "Choose Gift screen." ,MediaEntityBuilder.createScreenCaptureFromPath(SupportingMethods.takeScreenShot("."+ConstantsClass.PATHWAY_TO_AUXILIARY_FILES +"/ChooseGiftScreen", driver)).build());
         } catch (IOException e) {
             e.printStackTrace();
         }

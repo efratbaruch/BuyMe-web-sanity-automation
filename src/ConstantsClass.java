@@ -4,7 +4,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 class ConstantsClass {
 
     // general & settings constants
-    static final String PATHWAY_TO_AUXILIARY_FILES = "C:/Users/efratbaruch/IdeaProjects/Automating_BuyMe_Website_Project_Efrat_Baruch/Auxiliary Test Files";
+    static final String PATHWAY_TO_AUXILIARY_FILES = "/Auxiliary Test Files";
     static String DRIVER_TYPE;
     static String WEBSITE_URL;
     static WebDriverWait WAIT;

@@ -32,12 +32,12 @@ class RegistrationScreen {
                 try {
                     driver.get(ConstantsClass.WEBSITE_URL);
                 } catch (Exception e) {
-                    test.log(Status.FATAL, "URL doesn't load.", MediaEntityBuilder.createScreenCaptureFromPath(SupportingMethods.takeScreenShot(ConstantsClass.PATHWAY_TO_AUXILIARY_FILES + "/UrlUploadFail", driver)).build());
+                    test.log(Status.FATAL, "URL doesn't load.", MediaEntityBuilder.createScreenCaptureFromPath(SupportingMethods.takeScreenShot("."+ConstantsClass.PATHWAY_TO_AUXILIARY_FILES + "/UrlUploadFail", driver)).build());
                     pageUploaded = false;
                 } finally {
                     if (pageUploaded) {
                         ConstantsClass.WAIT.until(ExpectedConditions.visibilityOfElementLocated(ConstantsClass.ENTRY_LINK));
-                        test.log(Status.PASS, "URL load was successful.", MediaEntityBuilder.createScreenCaptureFromPath(SupportingMethods.takeScreenShot(ConstantsClass.PATHWAY_TO_AUXILIARY_FILES + "/EntryToWebsite", driver)).build());
+                        test.log(Status.PASS, "URL load was successful.", MediaEntityBuilder.createScreenCaptureFromPath(SupportingMethods.takeScreenShot("."+ConstantsClass.PATHWAY_TO_AUXILIARY_FILES + "/EntryToWebsite", driver)).build());
                     }
                 }
             }
@@ -49,7 +49,7 @@ class RegistrationScreen {
         driver.findElement(ConstantsClass.ENTRY_LINK).click();
         driver.findElement(ConstantsClass.REGISTRATION_LINK).click();
         ConstantsClass.WAIT.until(ExpectedConditions.visibilityOfElementLocated(ConstantsClass.NAME_FIELD));
-        test.log(Status.INFO, "Registration screen opened.", MediaEntityBuilder.createScreenCaptureFromPath(SupportingMethods.takeScreenShot(ConstantsClass.PATHWAY_TO_AUXILIARY_FILES + "/RegistrationScreen", driver)).build());
+        test.log(Status.INFO, "Registration screen opened.", MediaEntityBuilder.createScreenCaptureFromPath(SupportingMethods.takeScreenShot("."+ConstantsClass.PATHWAY_TO_AUXILIARY_FILES + "/RegistrationScreen", driver)).build());
         boolean detaiUpload = true;
         try {
             driver.findElement(ConstantsClass.NAME_FIELD).sendKeys(SupportingMethods.readXML("firstName"));

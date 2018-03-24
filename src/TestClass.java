@@ -23,7 +23,7 @@ public class TestClass {
     @BeforeClass
     public static void setUpTest(){
         extent = new ExtentReports();
-        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(ConstantsClass.PATHWAY_TO_AUXILIARY_FILES+"/extent.html");
+        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("."+ConstantsClass.PATHWAY_TO_AUXILIARY_FILES+"/extent.html");
         extent.attachReporter(htmlReporter);
         test = extent.createTest("Project Test", "Report of Web Project");
 
@@ -114,7 +114,7 @@ public class TestClass {
     public static void closeTest(){
         try {
             ConstantsClass.WAIT.until(ExpectedConditions.urlContains("payment"));
-            test.log(Status.INFO, "Test completed.", MediaEntityBuilder.createScreenCaptureFromPath(SupportingMethods.takeScreenShot(ConstantsClass.PATHWAY_TO_AUXILIARY_FILES + "/FinalScreen", driver)).build());
+            test.log(Status.INFO, "Test completed.", MediaEntityBuilder.createScreenCaptureFromPath(SupportingMethods.takeScreenShot("."+ConstantsClass.PATHWAY_TO_AUXILIARY_FILES + "/FinalScreen", driver)).build());
         } catch (IOException e) {
             e.printStackTrace();
         }

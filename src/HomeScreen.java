@@ -25,7 +25,7 @@ class HomeScreen {
             test.log(Status.PASS, "Option on dropDown menu number " + (i+1) + " selected successfully.");
         }
         try {
-            test.log(Status.INFO, "Options selected.", MediaEntityBuilder.createScreenCaptureFromPath(SupportingMethods.takeScreenShot(ConstantsClass.PATHWAY_TO_AUXILIARY_FILES + "/HomeScreenWithChoices", driver)).build());
+            test.log(Status.INFO, "Options selected.", MediaEntityBuilder.createScreenCaptureFromPath(SupportingMethods.takeScreenShot("."+ConstantsClass.PATHWAY_TO_AUXILIARY_FILES + "/HomeScreenWithChoices", driver)).build());
         } catch (IOException e) {
             e.printStackTrace();
         }

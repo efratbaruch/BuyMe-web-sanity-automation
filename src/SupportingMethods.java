@@ -15,7 +15,7 @@ public class SupportingMethods {
 
     // The methods reads content of xml files and returns String.
     static String readXML(String keyName){
-        File fXmlFile = new File(ConstantsClass.PATHWAY_TO_AUXILIARY_FILES+"/a.xml");
+        File fXmlFile = new File("."+ConstantsClass.PATHWAY_TO_AUXILIARY_FILES+"/configuration.xml");
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder dBuilder = null;
         try {
